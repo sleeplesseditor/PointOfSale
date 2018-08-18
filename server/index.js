@@ -5,7 +5,7 @@ const express = require('express'),
     server = http.createServer(app),
     bodyParser = require('body-parser'),
     io = require('socket.io')(server),
-    liveCart;
+    liveCart = [];
 
 console.log('Real-time POS Running');
 console.log('Server Started');

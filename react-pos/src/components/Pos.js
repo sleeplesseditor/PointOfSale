@@ -130,7 +130,7 @@ class Pos extends Component {
                     <Modal.Body>
                         <h3>
                             Amount Due:
-                            <span class="text-danger">{this.state.changeDue}</span>
+                            <span className="text-danger">{this.state.changeDue}</span>
                         </h3>
                         <p>Customer payment incomplete; Correct and Try again</p>
                     </Modal.Body>
@@ -152,11 +152,11 @@ class Pos extends Component {
                     <Modal.Body>
                         <h3>
                             Total:
-                            <span class="text-danger">{this.state.totalPayment}</span>
+                            <span className="text-danger">{this.state.totalPayment}</span>
                         </h3>
                         <h3>
                             Change Due:
-                            <span class="text-success">{this.state.changeDue}</span>
+                            <span className="text-success">{this.state.changeDue}</span>
                         </h3>
                     </Modal.Body>
                     <Modal.Footer>
@@ -184,21 +184,21 @@ class Pos extends Component {
         return (
             <div>
                 <Header />
-                <div class="container">
-                        <div class="text-center">
-                            <span class="lead">Total</span>
+                <div className="container">
+                        <div className="text-center">
+                            <span className="lead">Total</span>
                             <br />
-                            <span class="text-success checkout-total-price">
+                            <span className="text-success checkout-total-price">
                                 ${this.state.total}
                                 <span />
                             </span>
                             <div>
                                 <button
-                                class="btn btn-success lead"
+                                className="btn btn-success lead"
                                 id="checkoutButton"
                                 onClick={this.handleCheckOut}
                                 >
-                                    <i class="glyphicon glyphicon-shopping-cart" />
+                                    <i className="glyphicon glyphicon-shopping-cart" />
                                     <br />
                                     <br />
                                     C<br />
@@ -216,23 +216,23 @@ class Pos extends Component {
                                             <Modal.Title>Checkout</Modal.Title>
                                         </Modal.Header>
                                         <Modal.Body>
-                                            <div ng-hide="transactionComplete" class="lead">
+                                            <div ng-hide="transactionComplete" className="lead">
                                                 <h3>
                                                     Total:
-                                                    <span class="text-danger"> {this.state.total} </span>
+                                                    <span className="text-danger"> {this.state.total} </span>
                                                 </h3>
                                                 <form
-                                                class="form-horizontal"
+                                                className="form-horizontal"
                                                 name="checkoutForm"
                                                 onSubmit={this.handlePayment}
                                                 >
-                                                    <div class="form-group">
-                                                        <div class="input-group">
-                                                        <div class="input-group-addon">$</div>
+                                                    <div className="form-group">
+                                                        <div className="input-group">
+                                                        <div className="input-group-addon">$</div>
                                                         <input
                                                             type="number"
                                                             id="checkoutPaymentAmount"
-                                                            class="form-control input-lg"
+                                                            className="form-control input-lg"
                                                             name="payment"
                                                             onChange={event =>
                                                             this.setState({
@@ -243,10 +243,10 @@ class Pos extends Component {
                                                         />
                                                         </div>
                                                     </div>
-                                                    <p class="text-danger">Enter payment amount.</p>
-                                                    <div class="lead" />
+                                                    <p className="text-danger">Enter payment amount.</p>
+                                                    <div className="lead" />
                                                     <Button
-                                                        class="btn btn-primary btn-lg lead"
+                                                        className="btn btn-primary btn-lg lead"
                                                         onClick={this.handlePayment}
                                                     >
                                                         Print Receipt
@@ -267,16 +267,16 @@ class Pos extends Component {
                         </div>
                     {renderAmountDue()}
                     {renderReceipt()}
-                    <table class="pos table table-responsive table-striped table-hover">
+                    <table className="pos table table-responsive table-striped table-hover">
                     <thead>
                         <tr>
-                            <td colspan="6" class="text-center">
-                                <span class="pull-left">
+                            <td colspan="6" className="text-center">
+                                <span className="pull-left">
                                 <button
                                     onClick={() => this.setState({ addItemModal: true })}
-                                    class="btn btn-default btn-sm"
+                                    className="btn btn-default btn-sm"
                                 >
-                                    <i class="glyphicon glyphicon-plus" /> Add Item
+                                    <i className="glyphicon glyphicon-plus" /> Add Item
                                 </button>
                                 </span>
                                 <Modal show={this.state.addItemModal} onHide={this.close}>
@@ -287,39 +287,39 @@ class Pos extends Component {
                                         <form
                                             ref="form"
                                             onSubmit={this.handleSubmit}
-                                            class="form-horizontal"
+                                            className="form-horizontal"
                                         >
-                                        <div class="form-group">
-                                            <label class="col-md-2 lead" for="name">
+                                        <div className="form-group">
+                                            <label className="col-md-2 lead" for="name">
                                             Name
                                             </label>
-                                            <div class="col-md-8 input-group">
+                                            <div className="col-md-8 input-group">
                                             <input
-                                                class="form-control"
+                                                className="form-control"
                                                 name="name"
                                                 required
                                                 onChange={this.handleName}
                                             />
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 lead" for="price">
+                                        <div className="form-group">
+                                            <label className="col-md-2 lead" for="price">
                                                 Price
                                             </label>
-                                            <div class="col-md-8 input-group">
-                                            <div class="input-group-addon">$</div>
+                                            <div className="col-md-8 input-group">
+                                            <div className="input-group-addon">$</div>
                                             <input
                                                 type="number"
                                                 step="any"
                                                 min="0"
                                                 onChange={this.handlePrice}
-                                                class="form-control"
+                                                className="form-control"
                                                 name="price"
                                                 required
                                             />
                                             </div>
                                         </div>
-                                        <p class="text-danger">Enter price for item.</p>
+                                        <p className="text-danger">Enter price for item.</p>
                                         </form>
                                     </Modal.Body>
                                     <Modal.Footer>
@@ -333,7 +333,7 @@ class Pos extends Component {
                                 </Modal>
                             </td>
                         </tr>
-                        <tr class="titles">
+                        <tr className="titles">
                             <th>Name</th>
                             <th>Price</th>
                             <th>Quantity</th>

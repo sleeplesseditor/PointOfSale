@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import "../App.css";
 import axios from "axios";
 
 import Header from "./Header";
@@ -25,10 +25,10 @@ class Transactions extends Component {
         var { transactions } = this.state;
         var rendertransactions = () => {
             if (transactions.length === 0) {
-            return <p>No Transactions found</p>;
+                return <p>No Transactions found</p>;
             }
             return transactions.map(transaction => (
-            <CompleteTransactions {...transaction} />
+                <CompleteTransactions {...transaction} />
             ));
         };
 

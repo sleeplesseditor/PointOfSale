@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import "../App.css";
 import io from "socket.io-client";
 import axios from "axios";
 import moment from "moment";
